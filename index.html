@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Quest Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="download.png" alt="Cosmic Quest Game Logo" />
+            <h6>Cosmic Quest Game</h6>
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="inst.html">Instructions</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="cart.html"><img src="cart-icon.png" alt="Cart" /></a></li>
+        </ul>
+    </nav>
+    
+        <style>
+            * {box-sizing: border-box;}
+    
+            .slideshow-container {
+                position: relative;
+                max-width: 100%;
+                margin: auto;
+            }
+    
+            .mySlides {
+                display: none; /* Hide all slides by default */
+            }
+    
+            .text {
+                position: absolute;
+                bottom: 8px;
+                left: 16px;
+                color: #f2f2f2;
+                font-size: 15px;
+            }
+    
+            .prev, .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 16px;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+    
+            .next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+    
+            .dot {
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+    
+            .active {
+                background-color: #717171;
+            }
+        </style>
+    </head>
+    <body>
+    
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <img src="image1.jpg" style="width:100%">
+            <div class="text">Slide 1</div>
+        </div>
+        <div class="mySlides">
+            <img src="image2.jpg" style="width:100%">
+            <div class="text">Slide 2</div>
+        </div>
+        <div class="mySlides">
+            <img src="image3.jpg" style="width:100%">
+            <div class="text">Slide 3</div>
+        </div>
+    
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+    
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+    
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+    
+        function showSlides(n) {
+            let i;
+            const slides = document.getElementsByClassName("mySlides");
+            const dots = document.getElementsByClassName("dot");
+    
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+    
+   
+    
+    
+    <main>
+        <section class="home">
+            <h1>Welcome to Cosmic Quest!</h1>
+            <p>Embark on an interstellar adventure through the cosmos and challenge yourself with exciting NASA-inspired questions!</p>
+            <p>Join us on our mission to inspire the next generation of scientists!</p>
+        </section>
+
+        <h1>Cosmic Quest Game Instructions</h1>
+        <div class="info-container">
+            <div class="about-game">
+                <h2>About the Game</h2>
+                <p>The Cosmic Quest game is designed for 2 to 5 players, ages 8 and up. In this exciting board game, players will navigate through 15 colorful planets inspired by NASA challenges. Each player will draw cards based on the color of the planet they land on, answering questions to progress towards the finish line, "The Sun".</p>
+            </div>
+            <div class="how-to-play">
+                <h2>How to Play</h2>
+                <p>The game begins with the "Mom" or instructor, who will have the brochure containing the answers and will judge the players' responses. Players take turns rolling a die to determine how many spaces to move forward. Here’s how the game works:</p>
+                <ol>
+                    <li>Each player rolls the die. The player with the highest roll goes first, followed by the others in descending order.</li>
+                    <li>On your turn, roll the die and move forward the number of spaces rolled.</li>
+                    <li>Upon landing on a planet, draw a card corresponding to that color and read the question aloud.</li>
+                    <li>If you answer correctly, you stay on that spot. If you answer incorrectly, you return to your previous position before rolling the die.</li>
+                    <li>The first player to reach "The Sun" wins!</li>
+                </ol>
+            </div>
+        </div>
+        <main class="content">
+            <section class="product">
+                <h1>Cosmic Quest Game</h1>
+                <img src="game-image.png" alt="Cosmic Quest Game">
+                <div class="quantity-control">
+                    <button onclick="changeQuantity(-1)">-</button>
+                    <input type="number" id="quantity" value="1" min="1" max="10">
+                    <button onclick="changeQuantity(1)">+</button>
+                </div>
+                <button id="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                <p id="cart-status"></p>
+            </section>
+        </main>
+        <section class="about">
+            <h1>About Us</h1>
+            <section class="about-us">
+                <div class="container">
+                    <div class="sphere">
+                        <h3>About Us</h3>
+                        <p>Our mission is to make science fun and engaging through board games!</p>
+                    </div>
+                    <div class="sphere">
+                        <h3>Our Team</h3>
+                        <p>We are a group of passionate science enthusiasts dedicated to inspiring young minds!</p>
+                    </div>
+                    <div class="sphere">
+                        <h3>Join Us</h3>
+                        <p>Get involved and help us create a brighter future for science education!</p>
+                    </div>
+                </div>
+            </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<footer>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <p class="footer-copyright">© 2024 Cosmic Quest. All rights reserved.</p>
+        </div>
+    </footer>
+    
+</footer>
+</body>
+</html>
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Quest Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="download.png" alt="Cosmic Quest Game Logo" />
+            <h6>Cosmic Quest Game</h6>
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="inst.html">Instructions</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="cart.html"><img src="cart-icon.png" alt="Cart"></a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <section class="product">
+            <h1>Cosmic Quest Game</h1>
+            <img src="game-image.png" alt="Cosmic Quest Game">
+            <div class="quantity-control">
+                <button onclick="changeQuantity(-1)">-</button>
+                <input type="number" id="quantity" value="1" min="1" max="10">
+                <button onclick="changeQuantity(1)">+</button>
+            </div>
+            <button id="add-to-cart" onclick="addToCart()">Add to Cart</button>
+            <p id="cart-status"></p>
+        </section>
+    </main>
+</body>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <p class="footer-copyright">© 2024 Cosmic Quest. All rights reserved.</p>
+    </div>
+</footer>
+
+</html>
